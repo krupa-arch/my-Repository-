@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="chat-icon">💬</div>
+                <h1>Welcome to ChatApp</h1>
+                <p>Connect and chat with people instantly</p>
+            </div>
+            <div class="login-form">
+                <input type="text" id="usernameInput" placeholder="Enter your username" maxlength="20" autocomplete="off">
+                <button id="joinBtn" class="btn-primary">Join Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatScreen" class="screen">
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Online Users</h3>
+                    <span id="userCount" class="user-count">0</span>
+                </div>
+                <div id="usersList" class="users-list"></div>
+            </div>
+
+            <div class="chat-main">
+                <div class="chat-header">
+                    <div class="header-left">
+                        <div class="status-indicator"></div>
+                        <div>
+                            <h2>Chat Room</h2>
+                            <span id="typingIndicator" class="typing-text"></span>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="btn-logout">Logout</button>
+                </div>
+
+                <div id="messagesContainer" class="messages-container"></div>
+
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <button class="emoji-btn" id="emojiBtn">😊</button>
+                        <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                        <button id="sendBtn" class="btn-send">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="emojiPicker" class="emoji-picker hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
